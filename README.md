@@ -63,3 +63,14 @@ These are you do extraxt, modify and format the String
             clean_log = log.replace("[", "").replace("]", "")  # Remove brackets
             print(clean_log)
             # Output: 2025-02-07 12:30:15 INFO: User logged in
+
+2.converting the data into JSON format
+Once we have extracted and manipulated the log data, we need to store it in JSON format.
+
+Using the json Library
+Python provides a built-in json module that allows us to convert Python dictionaries (or lists) into JSON format. The key functions we will use are:
+    json.dumps(): Converts a Python dictionary into a JSON string.
+    json.dump(): Writes the JSON data to a file.
+    json.loads(): Converts a JSON string into a Python dictionary.
+    json.load(): Reads JSON data from a file and loads it as a dictionary.
+        Example: Converting Log Data to JSON
