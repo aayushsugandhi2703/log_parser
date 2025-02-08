@@ -44,3 +44,16 @@ for ip in sorted_ips_assending:
 
 for count in sorted_ips_request:
     print(count)
+
+# sorting hte ip on hte basis of status code frequency
+status_code_dict = {}
+for log in logs:
+    ip =log["ip"]
+    status_code = log["status"]
+    if ip not in status_code_dict:
+        status_code_dict[ip] = {}
+    status_code_dict[ip][status_code] = status_code_dict[ip].get(status_code, 0) + 1
+
+sorted_frecquency = sorted(status_code_dict.keys())
+for ip in sorted_frecquency:
+    print(ip, status_code_dict[ip])
