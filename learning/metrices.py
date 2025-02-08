@@ -54,6 +54,12 @@ for log in logs:
         status_code_dict[ip] = {}
     status_code_dict[ip][status_code] = status_code_dict[ip].get(status_code, 0) + 1
 
-sorted_frecquency = sorted(status_code_dict.keys())
-for ip in sorted_frecquency:
-    print(ip, status_code_dict[ip])
+sorted_status_code_dict = {ip: status_code_dict[ip] for ip in sorted(status_code_dict.keys())}
+
+# Save sorted logs to a file
+with open("sorted_logs.json", "w") as file:
+    json.dump(sorted_status_code_dict, file, indent=4)
+
+# Print the sorted logs
+for ip, status_count in sorted_status_code_dict.items():
+    print(ip, status_count)
