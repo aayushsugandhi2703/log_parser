@@ -1,5 +1,6 @@
 import os
 import json
+from prettytable import PrettyTable
 
 # Dictionary to count occurrences of each HTTP status code
 status_count = {}
@@ -63,3 +64,12 @@ with open("sorted_logs.json", "w") as file:
 # Print the sorted logs
 for ip, status_count in sorted_status_code_dict.items():
     print(ip, status_count)
+
+t = PrettyTable(["IP Address", "Frequency", "Status Code", "Count"])
+
+# Iterate over sorted IPs and retrieve status codes
+for ip in sorted_ips_assending:
+    for status, count in status_code_dict[ip].items(): 
+        t.add_row([ip, ip_dict[ip], status, count])
+# Print the table
+print(t)
