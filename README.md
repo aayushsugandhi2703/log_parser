@@ -1,3 +1,4 @@
+<pre>
 This file has all the basic concept related to this project 
 
 Scope of Project : To get the understanding about parsing the logs and converting it into JSON format
@@ -74,3 +75,4 @@ Python provides a built-in json module that allows us to convert Python dictiona
     json.loads(): Converts a JSON string into a Python dictionary.
     json.load(): Reads JSON data from a file and loads it as a dictionary.
         Example: Converting Log Data to JSON
+</pre>
